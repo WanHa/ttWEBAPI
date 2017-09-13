@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <!--v-if-->
+    </head>
+    <div id="app3">
+        <p v-if="seen">看到了没</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#app3',
+            data:{
+                seen:true
+            }
+        })
+    </script>
+</html>

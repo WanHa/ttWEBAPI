@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <style>
+            .big{
+                font-size: 50px;
+            }
+            .active{
+                color:#f11;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app90">
+            <button @click="btnclick">改变class</button>
+            <br/>
+            <span :class="myClass">文本</span>
+        </div>
+
+    </body>
+    <script>
+        var app90=new Vue({
+            el:'#app90',
+            data:{
+                myClass:{
+                    big:true,
+                    active:true
+                }
+            },
+            methods:{
+                btnclick:function(){
+                    this.myClass.big=!this.myClass.big;
+                    this.myClass.active=!this.myClass.active;
+                }
+            }
+        })
+    </script>
+</html>

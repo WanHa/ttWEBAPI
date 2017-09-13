@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <!--v-on方法绑定-->
+    </head>
+    <body>
+        <div id="app5">
+            <p>{{message}}</p>
+            <button v-on:click="reverseMessage">reverse</button>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el:'#app5',
+            data:{
+                message:'hello vue.js'
+            },
+            methods:{
+                reverseMessage:function(){
+                    this.message=this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</html>

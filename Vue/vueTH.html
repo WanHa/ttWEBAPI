@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app80">
+            
+        </div>        
+        <div id="app81">
+
+        </div>
+    </body>
+    <script>
+        var data={a:1}
+        var vm=new Vue({
+            el:'#app80',
+            data:data
+        })
+        
+        var vm81=new Vue({
+            el:'#app81',
+            data:{
+                a:1
+            }
+            //生命周期钩子
+            create:function(){
+                console.log('a is: '+this.a)
+            }
+        })
+
+    </script>
+</html>

@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <!-->if else if</!-->
+        <div id="app1000">
+            <button @click="btnClick" >点击按钮</button>
+            <div v-if="result==0">成绩未公布</div>
+            <div v-else-if="result<60">成绩:{{result}},不及格</div>
+            <div v-else-if="result<80">成绩:{{result}},继续努力</div>
+            <div v-else>成绩:{{result}},玩游戏吧</div>
+        </div>
+        <!-->v-show</!-->
+        <div id="app1010">
+            <button @click="csClick">元素显示</button>
+            <div v-show="result" >哈哈</div>
+        </div>
+        <!-->循环数组</!-->
+        <div id="app1020">
+            <ul>
+                <li v-for="(game, index) in games" value="{{game.name}}">({{index +1}}) 游戏:{{game.name}},价格:{{game.price}}</li>
+            </ul>
+        </div>
+        <!-->循环对象</!-->
+        <div id="app1030">
+
+        </div>
+    </body>
+    <script>
+        var app1000=new Vue({
+            el:'#app1000',
+            data:{
+                result:0
+            },
+            methods:{
+                btnClick:function(){
+                    this.result=Math.round(Math.random() * 100) ;
+                }
+            }
+            
+        })
+
+        var app1010 =new Vue({
+            el:'#app1010',
+            data:{
+                result:false
+            },
+            methods:{
+                csClick:function(){
+                    this.result=!this.result;
+                }
+            }
+        })
+
+        var app1020=new Vue({
+            el:'#app1020',
+            data:{
+                games:[
+                    {name:'勇者斗恶龙',price:'1000$'},
+                    {name:'超级马里奥',price:'500$'},
+                    {name:'忍者龙剑传',price:'3000$'}
+                ]
+            }
+        })
+
+        var app1030=new Vue({
+            el:'#app1030',
+            data:{
+                myGames:{
+                    title:'超级马里奥',
+                    price:500,
+                    pubdate:'2018年10月',
+                    cateegory:'冒险',
+                    agerange:'全年龄'
+                }
+            }
+        });
+    </script>
+</html>

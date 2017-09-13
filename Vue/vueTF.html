@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <!--双数据绑定&组件-->
+    </head>
+    <body>
+        <div id="app60">
+            
+            <input type="text" v-model="message" />
+            <p>{{message}}</p>
+        </div>
+        <div id="app61">
+            <ul>
+                <todo-item v-for="ss in sata" 
+                           v-bind:todo="ss" 
+                           v-bind:key="ss.id">
+                </todo-item>
+            </ul>
+        </div>
+    </body>
+    <script>
+        Vue.component('todo-item',{
+            props:['todo'],
+            template:'<li>{{todo.text}}</li>'
+        })
+        new Vue({
+            el:'#app60',
+            data:{
+                message:''
+            }
+        })
+        //反引号
+        var testVar=`
+            <div>
+                <p>test</p>    
+            </div>
+        `;
+
+        var app61=new Vue({
+            el:'#app61',
+            data:{
+                sata:[
+                    {id:0,text:'orange'},
+                    {id:1,text:'apple'},
+                    {id:2,text:'banana'},
+                    {id:3,text:'tomato'}
+                ]
+            }
+        })
+        
+        
+    </script>
+</html>

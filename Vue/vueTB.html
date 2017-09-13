@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+    </head>
+    <div id="app-2">
+        <span v-bind:title="message">鼠标悬停显示信息</span>
+    </div>
+    <script>
+        new Vue({
+            el:'#app-2',
+            data:{
+                message:'页面加载于'+ new Date()
+            }
+        })
+    </script>
+</html>
